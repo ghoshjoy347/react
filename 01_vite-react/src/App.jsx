@@ -1,7 +1,10 @@
+import joy from "./joy"
+
+
 function App() {
 
   return (
-    <h1>Lets Begin React with Vite | JOY</h1>
+    <joy/>
   )
 }
 
