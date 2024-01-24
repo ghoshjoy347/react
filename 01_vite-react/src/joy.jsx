@@ -7,4 +7,3 @@ return(
 }
 export default joy
 
-// 1:20:00
