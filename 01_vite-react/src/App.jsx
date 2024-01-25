@@ -1,13 +1,13 @@
-import joy from "./joy"
-
+import joyy from "./joy"
 
 
 function App() {
-
+  const username = "Joy"
   return (
     <>
     <joy/>
-    <h1>code with joy</h1>
+    <joy/>
+    <h1>code with joy {username}</h1> //evaluated expression
     <p>test para</p>
     </>
   )
