@@ -9,6 +9,8 @@ function App() {
 
   //let counter = 52
 
+  //counter should not exceed more than 20 and not recede less than 0
+
   const addValue = () => {
     if(counter >= 20){
       counter = 20
