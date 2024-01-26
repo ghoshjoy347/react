@@ -2,7 +2,7 @@ import joyy from "./joy"
 
 
 function App() {
-  const username = "Joy"
+  const username = "code with joy"
   return (
     <>
     <joy/>

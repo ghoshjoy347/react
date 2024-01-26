@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import {jsx as _jsx} from "react/jsx-runtime.js"
 import App from './App.jsx'
 
 function MyApp(){
@@ -24,14 +25,18 @@ const anotherElement = (
 
 )
 
+const anotherUser =  "code and react"
+
 const reactElement = React.createElement(
     "a",
     {href : "https://www.google.com", target : "_blank"},
-    "Click me to visit Google"
+    "Click me to visit Google",
+    anotherElement
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
  
-    MyApp
- 
+    reactElement 
+
+   
 )
