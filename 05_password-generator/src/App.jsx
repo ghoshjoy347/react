@@ -2,7 +2,7 @@ import { useState,useCallback,useEffect,useRef} from 'react'
 import './App.css'
 
 function App() {
-
+ 
   const [length, setLength] = useState(8)
   const [numberAllowed, setnumberAllowed] = useState(false)
   const [charAllowed, setcharAllowed] = useState(false)
