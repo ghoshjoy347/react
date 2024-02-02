@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { FaArrowRight } from "react-icons/fa";
 
 
 function App(){
@@ -71,7 +72,7 @@ function App(){
 //   )
 // }
 
-//<--------------------------------------------removing the last element on click---------------------------------------------------------------------------------------->
+//<--------------------------------removing the last element on click--------------------------------------------->
 
 // const [val,setVal] = useState([1,2,3,4,5,6])
 
@@ -85,7 +86,7 @@ function App(){
 //     </div>
   
 
-//<------------------------------------------------removing divisible by 2 from the array---------------------------------------------------------------------------->
+//<---------------------------------removing divisible by 2 from the array----------------------------------------------->
 
 
 // const [val,setVal] = useState([1,2,3,4,5,6])
@@ -100,7 +101,7 @@ function App(){
 //   )
 // }
 
-//<----------------------------------------------------add element at the end of an array---------------------------------------------------------------->
+//<-------------------------------------------add element at the end of an array----------------------------------------->
 
 // const [val,setVal] = useState([1,2,3,4,5,6])
 
@@ -114,27 +115,58 @@ function App(){
 //   )
 // }
 
-//<----------------------------------------------------add element at last---------------------------------------------------------------->
+//<------------------------------------------add element at last--------------------------------------------------->
 
-const [val,setVal] = useState([
-  {name:"joy", age: 22},
-  {name:"messi", age: 25},
-  {name:"virat", age: 35},
-])
+// const [val,setVal] = useState([
+//   {name:"joy", age: 22},
+//   {name:"messi", age: 25},
+//   {name:"virat", age: 35},
+// ])
 
-  return (
+//   return (
 
-    <div className="p-5">
-      {val.map((item) => ( 
-      <div>
-      <h1>{item.name}</h1>
-      <h2>{item.age}</h2>
-      </div>
-      ))}
-      <button onClick={()=>setVal(()=>val.map((item)=>(item.name) === "messi" ? ({name:"messi", age: 37}) : item))} className="px-2 py-1 bg-blue-400 rounded-full text-xs text-white">Click</button>
+//     <div className="p-5">
+//       {val.map((item) => ( 
+//       <div>
+//       <h1>{item.name}</h1>
+//       <h2>{item.age}</h2>
+//       </div>
+//       ))}
+//       <button onClick={()=>setVal(()=>val.map((item)=>(item.name) === "messi" ? ({name:"messi", age: 37}) : item))} className="px-2 py-1 bg-blue-400 rounded-full text-xs text-white">Click</button>
+//     </div>
+
+
+//<-------------------------------------------------------------------------------------------------------->
+
+  // const [val,setVal] = useState(false)
+
+  // return (
+
+  //   <div className="p-4">
+
+  //     <h1>
+  //       {val === false ? "Go" : "Don't Go"}
+  //     </h1>
+     
+  //   <button onClick={()=>setVal(()=>!val)} className="px-3 py-1 bg-blue-400">Change</button>
+  //   </div>
+
+//<-----------------------------------------------Image slider----------------------------------------------->
+
+const [val,setVal] = useState(false)
+
+return (
+  <div className='w-full h-screen flex justify-center items-center'>
+    <div className='relative w-60 h-32 rounded-md flex overflow-hidden'>
+      <img className={`shrink-0 transition-transform duration-700 ${val === false ? "-translate-x-[0%]" :  "-translate-x-[100%]"} w-full h-full object-cover`} src="https://plus.unsplash.com/premium_photo-1670758941284-bc28b71aa134?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+      <img className={`shrink-0 transition-transform duration-700 ${val === false ? "-translate-x-[0%]" :  "-translate-x-[100%]"} w-full h-full object-cover`} src="https://images.unsplash.com/photo-1627826676816-595b15b9651f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8" alt="" />
+      <span onClick={()=>setVal(()=>!val)}className="w-8 h-8 flex items-center justify-center rounded-full bg-[#dadada8b] absolute bottom-[0%] left-1/2 -translate-x-[50%] -translate-y-[50%]">
+      <FaArrowRight size={"0.7em"}/>
+      </span>
     </div>
-
-  )
+  </div>
+)
 }
+
 
 export default App
