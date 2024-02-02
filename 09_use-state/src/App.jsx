@@ -54,7 +54,7 @@ function App(){
 
       <h1>name:{val.name}</h1>
       <h2>isLoggedIn:{val.isLoggedIn.toString()}</h2>                     {/*boolean values doesnt get printed, so it needs to convert to string*/}
-      <button onClick={()=>setVal({...val, isLoggedIn: !val.isLoggedIn})} className="mt-2 px-3 py-1 bg-blue-400 rounded-full text-white">Change</button>
+      <button onClick={()=>setVal({...val, isLoggedIn: !val.isLoggedIn})} className={`mt-2 px-3 py-1 ${val.isLoggedIn ? "bg-blue-400" : "bg-red-400"} rounded-full text-white`}>Change</button>
 
     </div>
   
