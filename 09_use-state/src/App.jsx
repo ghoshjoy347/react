@@ -166,19 +166,51 @@ function App(){
 //     </div>
 //   </div>
 
-//<-------------------------------------------------with props------------------------------------------------->
+//<------------------------------------------------------------------------------------------------------------------------------------>
 
-  return (
-    <>
-    <Card text="Know More" color="bg-red-600"/>
-    <Card text="Download" color="bg-green-600"/>
-    <Card text="Play Online" color="bg-purple-600"/>
-    <Card text="Next Page" color="bg-blue-600"/>
-    </>
-  )
+  // return (
+  //   <>
+  //   <Card text="Know More" color="bg-red-600"/>
+  //   <Card text="Download" color="bg-green-600"/>
+  //   <Card text="Play Online" color="bg-purple-600"/>
+  //   <Card text="Next Page" color="bg-blue-600"/>
+  //   </>
+  // )
 
-  }
+  // }
+//<-------data will be on main app component ,with the help of use props we have to pass to Card, each Card has add friend button, after clicking add friend button we will get an alert-------->
 
 
+const data = [
+  {name: "Roger", profession:"Cricketer", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D", friends :false},
+  {name: "Trent", profession:"Footballer", image: "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D", friends :false},
+  {name: "Robin", profession:"Actor", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0fGVufDB8fDB8fHww", friends :false},
+  {name: "Jackson", profession:"Singer", image: "https://images.unsplash.com/photo-1528892952291-009c663ce843?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHBvcnRyYWl0fGVufDB8fDB8fHww", friends :false},
+];
+
+const [realData,setRealData] = useState(data)
+//wherever there's a state, only there we can modify
+const handleFriendsButton = (cardindex)=> {
+  setRealData((previous)=>{
+    return previous.map((item,index)=>{
+      if(index === cardindex){
+        return {...item, friends: !item.friends}
+      }
+      return item
+  })
+})
+}
+
+return (
+  <>
+    <div className="w-full h-screen bg-zinc-300 flex gap-4 items-center justify-center">
+     {realData.map((item,index)=>(
+      <Card key={index} handleClick={handleFriendsButton} index={index} values={item}/>
+     ))}
+    </div>
+  </>
+)
+
+} 
 
 export default App
