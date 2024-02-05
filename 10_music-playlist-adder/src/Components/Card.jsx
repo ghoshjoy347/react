@@ -11,7 +11,7 @@ function Card({data,handleClick,index}) {
         </div>
         <div>
           <h3 className='text-xl leading-none font-semibold'>{name}</h3>
-          <h6 className='text-sm  whitespace-nowrap'>{artist}</h6>
+          <h6 className='text-sm whitespace-nowrap'>{artist}</h6>
           </div>
         <button onClick={()=>handleClick(index)} className={`px-3 py-2 ${added === false ? "bg-orange-500 shadow-inner" : "bg-gray-100 shadow-inner text-orange-400 font-semibold"} bottom-0 translate-y-[50%] left-1/2 -translate-x-[50%] absolute text-white text-xs whitespace-nowrap rounded-full`}>{added === false ? "Add to Playlist" : "Already Added"}</button>
       </div>
