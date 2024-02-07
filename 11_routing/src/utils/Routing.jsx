@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from '../components/Home'
 import User from '../components/User'
 import About from '../components/About'
+import UserDetail from '../components/UserDetail'
 
 function Routing() {
   return (
@@ -10,7 +11,11 @@ function Routing() {
 
 
   <Route path='/' element={<Home />} />
-  <Route path='/User' element={<User />} />
+  <Route path='/User' element={<User />}> 
+
+  <Route path='/User/:name' element={<UserDetail />} />
+
+  </Route>
   <Route path='/About' element={<About />} />
 
 
